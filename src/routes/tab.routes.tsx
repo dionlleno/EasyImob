@@ -1,29 +1,16 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Feather } from "@expo/vector-icons";
 
-import ScreenNotes from "../screens/notes";
-import ScreenCustomer from "../screens/customer";
-import ScreenProperty from "../screens/property";
+import ScreenAnotacao from "../screens/anotacao";
+import ScreenCliente from "../screens/cliente";
+import ScreenImovel from "../screens/imovel";
 
 const Tab = createBottomTabNavigator();
 
 export default function TabRoutes() {
     return (
         <Tab.Navigator screenOptions={{
-            headerStyle: {
-                backgroundColor: '#FAFAFA',
-                width: '100%',
-                height: 60,
-                borderBottomWidth: 0,
-                justifyContent: 'center',
-                alignItems: 'center',
-            },
-            headerTitleStyle: {
-                color: '#00A7F8',
-                fontSize: 18,
-                fontWeight: 'bold',
-            },
-            headerTintColor: '#00A7F8',
+            headerShown: false,
             tabBarActiveTintColor: '#FAFAFA',
             tabBarActiveBackgroundColor: "#00A7F8",
             tabBarInactiveTintColor: '#00A7F8',
@@ -36,7 +23,7 @@ export default function TabRoutes() {
         }}>
             <Tab.Screen 
                 name="Anotação"
-                component={ScreenNotes}
+                component={ScreenAnotacao}
                 options={{
                     tabBarIcon: ({ color, size }) => (
                         <Feather name="book" size={size} color={color} />
@@ -45,7 +32,7 @@ export default function TabRoutes() {
                 }}  />
             <Tab.Screen 
                 name="Clientes" 
-                component={ScreenCustomer} options={{
+                component={ScreenCliente} options={{
                     tabBarIcon: ({ color, size }) => (
                         <Feather name="user" size={size} color={color} />
                     ),
@@ -53,7 +40,8 @@ export default function TabRoutes() {
                 }} />
             <Tab.Screen 
                 name="Imoveis"  
-                component={ScreenProperty} options={{
+                component={ScreenImovel} 
+                options={{
                     tabBarIcon: ({ color, size }) => (
                         <Feather name="home" size={size} color={color} />
                     ),
