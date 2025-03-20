@@ -1,4 +1,5 @@
 export class Endereco{
+    
     private id: number;
     private cep: string;
     private logradouro: string;

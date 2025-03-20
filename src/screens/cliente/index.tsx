@@ -22,6 +22,8 @@ export default function ScreenCliente() {
             "15/05/2023"
         )
         )
+
+    const clienteNew = new Cliente()
     return (
         <View style={styles.container}>
             <View style={styles.header} />

@@ -43,6 +43,8 @@ export default function ScreenImovel() {
         endereco
     )
 
+    const imovelNew = new Imovel()
+
     return (
         <View style={styles.container}>
             <View style={styles.header} />
