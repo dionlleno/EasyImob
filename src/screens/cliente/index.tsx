@@ -26,8 +26,6 @@ export default function ScreenCliente() {
     const clienteNew = new Cliente()
     return (
         <View style={styles.container}>
-            <View style={styles.header} />
-            <Text style={styles.title}>Informações do Cliente</Text>
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.label}>Nome:</Text>
                 <Text style={styles.value}>{cliente.getNome()}</Text>
@@ -47,8 +45,8 @@ export default function ScreenCliente() {
                 <Text style={styles.label}>Data de Atualização:</Text>
                 <Text style={styles.value}>{cliente.getDataAtualizacao()}</Text>
 
-                <Button title="Alterar Dados" onPress={searchPresse} />
             </ScrollView>
+            <Button title="Alterar" onPress={searchPresse} />
         </View>
     );
 };

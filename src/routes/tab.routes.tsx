@@ -10,19 +10,28 @@ const Tab = createBottomTabNavigator();
 export default function TabRoutes() {
     return (
         <Tab.Navigator screenOptions={{
-            headerShown: false,
+            headerTintColor: '#00A7F8',
+            headerTitleAlign:"center",
+            headerStyle: {
+                height: 70,
+                width: "100%",
+            },
+            headerTitleStyle: {
+                fontSize: 20,
+                fontWeight: "bold",
+            },
             tabBarActiveTintColor: '#FAFAFA',
             tabBarActiveBackgroundColor: "#00A7F8",
             tabBarInactiveTintColor: '#00A7F8',
-            tabBarInactiveBackgroundColor: "##DFEDF1",
-            tabBarStyle: {
-                borderTopColor: 'transparent',
-                borderTopWidth: 0,
+            tabBarInactiveBackgroundColor: "#DFEDF1",
+            //tabBarStyle: {
+                //borderTopColor: 'transparent',
+                //borderTopWidth: 0,
 
-            },                                         
+            //},                                         
         }}>
             <Tab.Screen 
-                name="Anotação"
+                name="Anotações"
                 component={ScreenAnotacao}
                 options={{
                     tabBarIcon: ({ color, size }) => (
@@ -39,7 +48,7 @@ export default function TabRoutes() {
                     tabBarLabel: 'Clientes',
                 }} />
             <Tab.Screen 
-                name="Imoveis"  
+                name="Imóveis"  
                 component={ScreenImovel} 
                 options={{
                     tabBarIcon: ({ color, size }) => (

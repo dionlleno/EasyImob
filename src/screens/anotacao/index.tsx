@@ -1,10 +1,18 @@
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button, Modal } from 'react-native';
 
 import styles from './styles';
 import { Anotacao } from '../../models/anotacao';
 import { useState } from 'react';
 
 export default function ScreenAnotacao() {
+
+    function openPopup(){
+
+    }
+
+    function searchPresse(){
+        alert('Função de pesquisa aqui');
+    }
 
     const [ anotacao ] = useState(
         new Anotacao(
@@ -20,8 +28,12 @@ export default function ScreenAnotacao() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header} />
-            <Text style={styles.title}>Anotação</Text>
+            <View style={styles.buttonBar}>
+                <Button title='Pesquisar' onPress={openPopup}></Button>
+
+                <Button title='Adicionar' onPress={searchPresse}></Button>
+
+            </View>
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.label}>Título:</Text>
                 <Text style={styles.value}>{anotacao.getTitulo()}</Text>
@@ -32,6 +44,7 @@ export default function ScreenAnotacao() {
                     <Text style={styles.value}>{anotacao.getConteudo()}</Text>
                 </View>
             </ScrollView>
+            <Button title="Alterar" onPress={searchPresse} />
         </View>
     );
 }

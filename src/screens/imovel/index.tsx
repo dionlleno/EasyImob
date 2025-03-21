@@ -1,4 +1,4 @@
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, Button } from 'react-native';
 import Checkbox from 'expo-checkbox';
 import { Imovel } from '../../models/imovel';
 import { Endereco } from '../../models/endereco';
@@ -7,6 +7,10 @@ import { useState } from 'react';
 import styles from './styles';
 
 export default function ScreenImovel() {
+
+    function searchPresse(){
+        alert('Função de pesquisa aqui');
+    }
 
     const [isChecked, setChecked] = useState(false);
 
@@ -47,8 +51,6 @@ export default function ScreenImovel() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header} />
-            <Text style={styles.title}>Informaçõe do Imovel</Text>
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.label}>Area:</Text>
                 <Text style={styles.value}>{imovel.getArea()}m²</Text>
@@ -95,6 +97,7 @@ export default function ScreenImovel() {
                 <Text style={styles.value}>{imovel.getDataCadastro()}</Text>
 
             </ScrollView>
+            <Button title="Alterar" onPress={searchPresse} />
         </View>
     );
 }

@@ -1,10 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { Button, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
-        backgroundColor: '#cccccc',
+        padding: 15,
+        backgroundColor: '#FFFFFF',
+        gap: 10,
     },
     header:{
         width: "100%",
@@ -49,10 +50,21 @@ const styles = StyleSheet.create({
         backgroundColor: "#00A7F8",
     },
     scrollView: {
+        borderColor: "black",
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         padding: 10,
     },
+    button: {
+        padding: 5,
+        borderRadius: 10,
+    },
+    buttonBar: {
+        justifyContent: "center",
+        gap: 20
+        ,
+        flexDirection: 'row',
+    }
     
 });
 
