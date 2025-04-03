@@ -50,13 +50,33 @@ const styles = StyleSheet.create({
         backgroundColor: "#00A7F8",
     },
     scrollView: {
+        borderColor: "black",
         backgroundColor: '#FFFFFF',
         borderRadius: 10,
         padding: 10,
     },
     button: {
+        width: 100,
+        height: 40,
         padding: 5,
         borderRadius: 10,
+    },
+    buttonBar: {
+        justifyContent: "space-between",
+        alignItems: "center",
+        flexDirection: 'row',
+    },
+    labelSearch: {
+        width: 60,
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#00a7f8',
+        marginBottom: 5,
+    },
+    input: {
+        width: 120,
+        height: 40,
+        borderWidth: 1,
     }
     
 });

@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, Button, ScrollView } from 'react-native';
+import { View, Text, Button, ScrollView, TextInput } from 'react-native';
 import { Cliente } from '../../models/cliente';
 import styles from './styles';
 
 // Componente que usa a classe Clientes
 export default function ScreenCliente() {
+
+    const [Matricula, onChangeTextMatricula] = React.useState('');
+    const [Nome, onChangeTextNome] = React.useState('');
+
+    function openPopup(){
+
+    }
+
     function searchPresse(){
         alert('Função de pesquisa aqui');
     }
@@ -24,8 +32,30 @@ export default function ScreenCliente() {
         )
 
     const clienteNew = new Cliente()
+
     return (
         <View style={styles.container}>
+            <View style={styles.buttonBar}>
+                <Text style={styles.labelSearch}>Matricula:</Text>
+                <TextInput style={styles.input} onChangeText={onChangeTextMatricula} value={Matricula} placeholder=""></TextInput>
+                <View style={styles.button}>
+                    <Button title='BUSCAR' onPress={openPopup}></Button>
+                </View>
+                <View style={styles.button}>
+                    <Button title='ADICIONAR' onPress={searchPresse}></Button>
+                </View>
+
+            </View>
+            <View style={styles.buttonBar}>
+                <Text style={styles.labelSearch}>Nome:</Text>
+                <TextInput style={styles.input} onChangeText={onChangeTextNome} value={Nome} placeholder=""></TextInput>
+                <View style={styles.button}>
+                    <Button title='ATUALIZAR' onPress={openPopup}></Button>
+                </View>
+                <View style={styles.button}>
+                    <Button title='EXCLUIR' onPress={searchPresse}></Button>
+                </View>
+            </View>
             <ScrollView style={styles.scrollView}>
                 <Text style={styles.label}>Nome:</Text>
                 <Text style={styles.value}>{cliente.getNome()}</Text>
